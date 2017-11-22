@@ -18,7 +18,7 @@ firmware_size () {
 
   PERCENT="$(echo ${PROGSIZE} ${MAX_PROG_SIZE} | awk "{ printf \"%02.01f\", \$1 / \$2 * 100 }")"
 
-	echo "${output}" | sed -e "s,\(Program:.*\)(\([0-9\.]*%\) Full),\1(${PERCENT}% Full),"
+	echo "${output}" | sed -e "s/\(Program:.*\)(\([0-9\.]*%\) Full)/\1(${PERCENT}% Full)/"
 }
 
 find_sketch () {
